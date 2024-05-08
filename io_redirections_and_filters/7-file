@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Best School" > /atlas-shell/"\*\\'"Best School"\'\\*$\?\*\*\*\*\*:)"
+echo "Best School" > /atlas-shell/'\*\\'"Best School"\'\\*$\?\*\*\*\*\*:)'
