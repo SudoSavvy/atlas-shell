@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#Code to loop given words 1-10
+while (( counter < 10 )); do
+	((counter++))
+
+#checks for 4 and displays bad luck
+		
+		if (( counter == 4 )); then
+		echo "bad luck"
+
+#checks for 8 and displays good luck
+		
+		elif (( counter == 8 )); then
+		echo "good luck"
+		
+#displays best school for everything else
+
+		else 
+		echo "Best School"
+		fi
+done
