@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #for the third time, still repeating echo but with different loop types <3
 counter=0
-until (( counter >= 5 )); do
+until (( counter >= 10 )); do
     echo "Best School"
     ((counter++))
 done
