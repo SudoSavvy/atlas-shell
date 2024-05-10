@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Best school loop with while, but the 9th loop displays "hi" along side it
+counter=0
+while (( counter < 10 )); do
+        echo "Best School"
+        ((counter ++))
+	   if (( counter = 9));do
+	      echo "Hi" 
+done
