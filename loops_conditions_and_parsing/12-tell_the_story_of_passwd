@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
-# Set IFS to ':' to read fields separated by ':'
-while IFS=: read -r username _ uid gid _ home shell; do
-    # Extract additional user information from /etc/passwd
-    info=$(grep "^$username:" /etc/passwd | cut -d: -f5)
+#Script that displays the content of the file /etc/passwd
+while IFS= read -r line
+do
+    username=$(echo "$line" | cut -f 1 -d ':')
+    password=$(echo "$line" | cut -f 2 -d ':')
+    userID=$(echo "$line" | cut -f 3 -d ':')
+    groupID=$(echo "$line" | cut -f 4 -d ':')
+    userINFO=$(echo "$line" | cut -f 5 -d ':')
+    home=$(echo "$line" | cut -f 6 -d ':')
+    command=$(echo "$line" | cut -f 7 -d ':')
 
-    # Retrieve the user's encrypted password (normally stored in /etc/shadow)
-    password=$(grep "^$username:" /etc/shadow | cut -d: -f2)
 
-    # Format the output based on extracted fields
-    echo "The user $username is part of the $gid gang, lives in $home and rides $shell. $uid's place is protected by the passcode $password, more info about the user here: $info"
-done < /etc/passwd
+    echo -n "The user $username is part of the $groupID gang, "
+    echo -n "lives in $home and rides $command."
+    echo -n " $userID's place is protected by the passcode $password, "
+    echo "more info about the user here: $userINFO"
+done < "/etc/passwd"
