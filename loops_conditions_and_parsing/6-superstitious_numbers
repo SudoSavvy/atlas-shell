@@ -5,15 +5,18 @@ counter=1
 # Start the while loop to iterate from 1 to 20
 while (( counter <= 20 )); do
     # Check if the current number matches any of the special cases
-    case $counter in
-        4)
-            echo "4 - Bad luck from China"
-            ;;
-        9)
-            echo "9 - Bad luck from Japan"
+	    case $counter in
+                4)
+                echo "$counter"
+                echo "Bad luck from China"
+                ;;
+                9)
+                echo "$counter"
+            echo "Bad luck from Japan"
             ;;
         17)
-            echo "17 - Bad luck from Italy"
+            echo "$counter"
+            echo "Bad luck from Italy"
             ;;
         *)
             echo "$counter"
@@ -23,4 +26,5 @@ while (( counter <= 20 )); do
     # Increment the counter
     ((counter++))
 done
-
+~                                                                                                                           
+~                           
