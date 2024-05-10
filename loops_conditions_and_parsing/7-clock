@@ -1,11 +1,21 @@
 #!/usr/bin/env bash
 #Cogsworth's brain
 hour=0
+minute=1
 count=0
 
-while [ $count -lt 13 ]; do
-    printf "%02d\n" $hour  # Print hour with leading zeros if necessary
-    count=$((count + 1))
-    hour=$((hour + 1))
-done
+while [ $count -lt 70 ]; do
+    if [ $minute -eq 1 ]; then
+        echo "Hour: $hour"
+    fi
 
+    echo $minute
+
+    count=$((count + 1))
+    minute=$((minute + 1))
+
+    if [ $minute -gt 59 ]; then
+        minute=1
+        hour=$((hour + 1))
+    fi
+done
