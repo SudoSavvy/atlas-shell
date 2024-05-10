@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Loop through each item in the current directory
+for item in *; do
+    # Check if the item is not a hidden file or directory
+    if [[ ! "$item" == .* ]]; then
+        # Extract the part of the name after the first dash, if exists
+        name=$(echo "$item" | cut -d '-' -f 2-)
+        
+        # Print the formatted name or the original item if no dash found
+        echo "$name"
+    fi
+done
