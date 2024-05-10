@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # Open /etc/passwd for reading
-while IFS=: read -r username _ uid _ home _; do
+while IFS=: read -r username _ uid _ _ home _; do
     # Print username, user ID, and home directory
-    echo "Username: $username"
-    echo "User ID: $uid"
-    echo "Home Directory: $home"
+    echo "$username:$uid:$home"
 done < /etc/passwd
