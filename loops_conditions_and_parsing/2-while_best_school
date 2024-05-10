@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#same script as before jsut with while <3
+counter=0
+while (( counter < 10 )); do 
+	echo "Best School"
+	((counter ++))
+done
